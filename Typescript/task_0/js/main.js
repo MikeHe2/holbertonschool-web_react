@@ -1,5 +1,5 @@
 var student1 = {
-    firstName: "Michellin",
+    firstName: "Mayonesa",
     lastName: "Gmomitas",
     age: 333,
     location: "Yerusalen",
@@ -11,10 +11,9 @@ var student2 = {
     location: "Tasmania",
 };
 // Array of student objects
-var studentsList = [
-    { firstName: "Michellin", lastName: "Gmomitas", age: 333, location: "Yerusalen" },
-    { firstName: "Goodyear", lastName: "Rueditas", age: 9009, location: "Tasmania" }
-];
+var studentsList = [student1, student2];
+//     { firstName: "Michellin", lastName: "Gmomitas", age: 333, location: "Yerusalen" },
+//     { firstName: "Goodyear", lastName: "Rueditas", age: 9009, location: "Tasmania" }
 // Function to render the table
 function renderTable(data) {
     // Create table element

@@ -6,7 +6,7 @@ interface Student {
 }
 
 const student1: Student = {
-    firstName: "Michellin",
+    firstName: "Mayonesa",
     lastName: "Gmomitas",
     age: 333,
     location: "Yerusalen",
@@ -20,10 +20,9 @@ const student2: Student = {
 }
 
 // Array of student objects
-const studentsList = [
-    { firstName: "Michellin", lastName: "Gmomitas", age: 333, location: "Yerusalen" },
-    { firstName: "Goodyear", lastName: "Rueditas", age: 9009, location: "Tasmania" }
-];
+const studentsList = [student1, student2]
+//     { firstName: "Michellin", lastName: "Gmomitas", age: 333, location: "Yerusalen" },
+//     { firstName: "Goodyear", lastName: "Rueditas", age: 9009, location: "Tasmania" }
 
 // Function to render the table
 function renderTable(data: Student[]) {
