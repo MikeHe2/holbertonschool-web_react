@@ -7,7 +7,7 @@ var Director = /** @class */ (function () {
     Director.prototype.getCoffeBreak = function () {
         return "Getting a coffee break";
     };
-    Director.prototype.wordDirectorTasks = function () {
+    Director.prototype.workDirectorTasks = function () {
         return "Getting to director tasks";
     };
     return Director;
@@ -21,7 +21,7 @@ var Teacher = /** @class */ (function () {
     Teacher.prototype.getCoffeBreak = function () {
         return "Cannot have a break";
     };
-    Teacher.prototype.wordDirectorTasks = function () {
+    Teacher.prototype.workTeacherTasks = function () {
         return "Getting to work";
     };
     return Teacher;
@@ -34,6 +34,19 @@ function createEmployee(salary) {
         return new Director();
     }
 }
-console.log(createEmployee(200)); // Teacher
-console.log(createEmployee(1000)); // Director
-console.log(createEmployee('$500')); // Director
+function isDirector(employee) {
+    return employee instanceof Director;
+}
+function executeWork(employee) {
+    if (isDirector(employee)) {
+        return employee.workDirectorTasks();
+    }
+    else {
+        return employee.workTeacherTasks();
+    }
+}
+// console.log(createEmployee(200));   // Teacher
+// console.log(createEmployee(1000));  // Director
+// console.log(createEmployee('$500')); // Director
+console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000)));
