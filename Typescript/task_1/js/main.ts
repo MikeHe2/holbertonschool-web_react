@@ -18,6 +18,39 @@ interface printTeacherFunction {
     ): string;
 }
 
+interface StudentClassConstructor {
+    new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+interface StudentClassInterface {
+    firstName: string;
+    lastName: string;
+    workOnHomework(): string;
+    displayName(): string;
+}
+
+const teacher3: Teacher = {
+    firstName: 'John',
+    fullTimeEmployee: false,
+    lastName: 'Doe',
+    location: 'London',
+    contract: false,
+  };
+
+//   console.log(teacher3);
+
+const director1: Directors = {
+    firstName: 'John',
+    lastName: 'Doe',
+    location: 'London',
+    fullTimeEmployee: true,
+    numberOfReports: 17,
+  };
+//   console.log(director1);
+
+
+
+
 const printTeacher: printTeacherFunction = (
     firstName: string,
     lastName: string
@@ -26,23 +59,28 @@ const printTeacher: printTeacherFunction = (
 
 }
 
-console.log(printTeacher("Jhon", "Doe"));
+// console.log(printTeacher("Jhon", "Doe"));
 
-// const teacher3: Teacher = {
-//     firstName: 'John',
-//     fullTimeEmployee: false,
-//     lastName: 'Doe',
-//     location: 'London',
-//     contract: false,
-//   };
+// Implement the StudentClass according to the interface
+class StudentClass implements StudentClassInterface {
+    firstName: string;
+    lastName: string;
 
-//   console.log(teacher3);
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
-// const director1: Directors = {
-//     firstName: 'John',
-//     lastName: 'Doe',
-//     location: 'London',
-//     fullTimeEmployee: true,
-//     numberOfReports: 17,
-//   };
-//   console.log(director1);
+    workOnHomework(): string {
+        return "Currently working";
+    }
+
+    displayName(): string {
+        return this.firstName;
+    }
+}
+
+// Example usage of task 4
+const student = new StudentClass("John", "Doe");
+console.log(student.displayName());
+console.log(student.workOnHomework());
